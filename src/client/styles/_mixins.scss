@@ -1,0 +1,43 @@
+/*
+40em = 640px
+64em = 1024px
+87.5em = 1400px
+*/
+
+// Sass Maps
+/*
+breakpoints-up
+this one if you want to traget a certain viewport and up
+we start from medium because we assume small is default one
+640px 1024px 1400px
+*/
+$breakpoints-up: (
+    'medium': 40em,
+    'large': 64em,
+    'xlarge': 87.5em,
+);
+
+/*
+breakpoints-down
+this one if you want to traget a certain viewport and down
+we don't use xlarge becasue xlarge and down is everything :)
+639px 1023px 1399px
+*/
+$breakpoints-down: (
+    'small': 39.9375em,
+    'medium': 63.9375em,
+    'large': 87.4375em,
+);
+
+// Mixins
+@mixin breakpoint-up($size) {
+    @media (min-width: map-get($map: $breakpoints-up, $key: $size )) {
+        @content;
+    }
+}
+
+@mixin breakpoint-down($size) {
+    @media (max-width: map-get($map: $breakpoints-down, $key: $size)) {
+        @content;
+    }
+}

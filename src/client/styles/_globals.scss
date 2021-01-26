@@ -1,0 +1,140 @@
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Public Sans', sans-serif;
+    line-height: 1.2;
+    background-color: whitesmoke;
+}
+
+a,
+a:visited,
+a:hover {
+    text-decoration: none;
+}
+
+button,
+.button {
+    padding: 0.4rem 1.6rem;
+    border: 2px solid black;
+    background: white;
+    cursor: pointer;
+    border-radius: 10px;
+    &:hover {
+        border: 2px solid white;
+        background: #808080;
+        color: white;
+    }
+}
+
+.hide-for-mobile {
+    @include breakpoint-down(medium) {
+        display: none;
+    }
+}
+
+.hide-for-desktop {
+    @include breakpoint-up(large) {
+        display: none;
+    }
+}
+.flex {
+    display: flex;
+    &-col {
+        flex-direction: column;
+    }
+    &-jc-sb {
+        justify-content: space-between;
+    }
+    &-jc-c {
+        justify-content: center;
+    }
+    &-ai-c {
+        align-items: center;
+    }
+}
+
+.green {
+    background: lightgreen;
+}
+
+.red {
+    background: red;
+}
+
+.blue {
+    background: lightblue;
+}
+
+.yellow {
+    background: yellow;
+}
+
+.magenta {
+    background: magenta;
+}
+
+.grey {
+    background: lightgray;
+}
+
+.lightGrey {
+    background: #e8e8e8;
+}
+
+.darkGrey {
+    background: #505050;
+    color: white;
+}
+
+/* HTML5 display-role reset for older browsers 
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+blockquote,
+q {
+    quotes: none;
+    &:after,
+    &:before {
+        content: '';
+        content: none;
+    }
+}
+
+p {
+    margin: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+ol,
+ul {
+    list-style: none;
+}
+ul {
+    list-style-type: none;
+}
+*/

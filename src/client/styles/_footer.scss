@@ -1,0 +1,20 @@
+footer {
+    /* ---  MOBILE  --- */
+    display: flex;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    p {
+        font-size: 0.9rem;
+    }
+
+    /* ---  TABLET (700px) --- */
+    @media (min-width: 43.75em) {
+    }
+    /* ---  DESKTOP (992px)  --- */
+    @media (min-width: 62em) {
+    }
+    /* ---  LARGE SCREENS (1392px)  --- */
+    @media (min-width: 87em) {
+    }
+}
