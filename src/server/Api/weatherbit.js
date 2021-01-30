@@ -28,7 +28,7 @@ class Weatherbit {
             .then(response => response.json())
             .then(({ data }) => {
                 if (data && data.length > 0) {
-                    const { max_temp: maxTemp, min_temp: minTemp, weather: { description } = {} } = data.pop();
+                    const { max_temp: maxTemp, min_temp: minTemp, weather: { description } = {} } = data[0];
                     return {
                         weather: {
                             description,

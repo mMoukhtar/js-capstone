@@ -15,11 +15,12 @@ class Pixabay {
             .then(response => response.json())
             .then(({ total, totalHits, hits }) => {
                 if (total > 0 && totalHits > 0 && hits.length > 0) {
+                    const { webformatURL: url, webformatWidth: width, webformatHeight: height } = hits[0];
                     return {
                         image: {
-                            url: hits[0].webformatURL,
-                            width: hits[0].webformatWidth,
-                            height: hits[0].webformatHeight,
+                            url,
+                            width,
+                            height,
                         },
                     };
                 } else {

@@ -8,7 +8,7 @@ const Api = async (cityName, countryCode, countryName, departureDate) => {
         if (!coordinates.lat && !coordinates.lng) throw new Error('Invalid Location Entered!');
         const [{ value: weather }, { value: image }] = await Promise.allSettled([
             loadWeather(coordinates.lng, coordinates.lat, days),
-            loadImage(countryName),
+            loadImage(`${cityName} ${countryName}`),
         ]);
         return {
             coordinates,
