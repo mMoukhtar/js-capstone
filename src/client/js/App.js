@@ -1,10 +1,10 @@
 import Header from './Components/Header.js';
-import Main from './Components/Main.js';
+import { Main, saveTripButtonOnClick } from './Components/Main.js';
 import Footer from './Components/Footer.js';
 
 let state = [];
 
-const render = (root) => {
+const render = root => {
     renderAt(
         root,
         `
@@ -25,10 +25,19 @@ const updateState = (state, newState) => {
 };
 
 // Events Handlers
-const hookEvents = ({ target }) => {
+const hookEvents = event => {
+    event.preventDefault();
+    const { target } = event;
+    let eventHandler = () => {};
     if (target.matches('#toggleButton')) {
-        target.addEventListener('click', toggleOnClick);
+        eventHandler = toggleOnClick;
+    } else if (target.matches('#addNewTripButton')) {
+    } else if (target.matches('#saveTripButton')) {
+        eventHandler = saveTripButtonOnClick;
+    } else {
+        return 0;
     }
+    target.addEventListener('click', eventHandler());
 };
 
 const toggleOnClick = () => {
@@ -36,13 +45,13 @@ const toggleOnClick = () => {
     const hasFadeItems = document.querySelectorAll('.has-fade');
     if (header.classList.contains('open')) {
         header.classList.remove('open');
-        hasFadeItems.forEach((item) => {
+        hasFadeItems.forEach(item => {
             item.classList.remove('fade-in');
             item.classList.add('fade-out');
         });
     } else {
         header.classList.add('open');
-        hasFadeItems.forEach((item) => {
+        hasFadeItems.forEach(item => {
             item.classList.remove('fade-out');
             item.classList.add('fade-in');
         });
