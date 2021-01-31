@@ -25,8 +25,18 @@ const Api = async (cityName, countryCode, countryName, departureDate) => {
     }
 };
 
+// Question1
+// what is port changed how can I handle this? in other words if server port become
+// 8080 instead of 8081 all the below functions will not work, is there a way to fix this automatically?
+
+// Question2
+// I didn't encounter any problems with weather api, and I didn't need to use solution in the link https://medium.com/@dtkatz/3-ways-to-fix-the-cors-error-and-how-access-control-allow-origin-works-d97d55946d9
+// Question3
+// When do I need to use cros?
+//Question4
+// Wha is the meaning of jsonP?
 const loadGeo = (cityName, countryCode) => {
-    let apiURL = new URL('http://localhost:8000/geo');
+    let apiURL = new URL('http://localhost:8081/geo');
     apiURL.search = new URLSearchParams({ cityName, countryCode }).toString();
     return fetch(apiURL)
         .then(response => response.json())
@@ -34,7 +44,7 @@ const loadGeo = (cityName, countryCode) => {
 };
 
 const loadWeather = (lng, lat, days) => {
-    let apiURL = new URL('http://localhost:8000/weather');
+    let apiURL = new URL('http://localhost:8081/weather');
     apiURL.search = new URLSearchParams({ lng, lat, days }).toString();
     return fetch(apiURL)
         .then(response => response.json())
@@ -42,7 +52,7 @@ const loadWeather = (lng, lat, days) => {
 };
 
 const loadImage = searchKey => {
-    let apiURL = new URL('http://localhost:8000/image');
+    let apiURL = new URL('http://localhost:8081/image');
     apiURL.search = new URLSearchParams({ searchKey }).toString();
     return fetch(apiURL)
         .then(response => response.json())

@@ -5,6 +5,7 @@ import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 import TerserPlugin from 'terser-webpack-plugin';
+import WorkboxPlugin from 'workbox-webpack-plugin';
 
 // Get access to dirname
 const moduleURL = new URL(import.meta.url);
@@ -54,5 +55,6 @@ export default {
         new MiniCssExtractPlugin({
             filename: '[name].css',
         }),
+        new WorkboxPlugin.GenerateSW(),
     ],
 };

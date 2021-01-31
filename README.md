@@ -8,7 +8,7 @@ npm install && npm start
 
 add .env
 
-port=8000
+port=8081
 
 geonames_api_key=
 
