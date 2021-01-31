@@ -1,19 +1,19 @@
 /* SERVER.JS */
 // Imports
-import express from 'express';
-import bodyParser from 'body-parser';
-import cors from 'cors';
-import compression from 'compression';
-import path from 'path';
-import dotevn from 'dotenv';
-import router from './Routers/routers.js';
-import chalk from 'chalk';
+const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const compression = require('compression');
+const path = require('path');
+const router = require('./Routers/routers.js');
+const chalk = require('chalk');
+var dotenv = require('dotenv');
+dotenv.config();
 
 // Setup Express App
 const app = express();
 
 //Get access to .env
-dotevn.config();
 const port = process.env.port;
 
 // Middleware dep.

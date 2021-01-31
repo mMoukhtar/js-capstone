@@ -3,13 +3,11 @@
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
-    "type": "module",
     "scripts": {
         "test": "jest",
         "start": "node src/server/server.js ",
-        "build": "node src/webpack/build.prod.js",
-        "build:dev": "node src/webpack/build.dev.js",
-        "start:dev": "node src/webpack/start.dev.js"
+        "build": "webpack --config webpack.prod.js",
+        "start:dev": "webpack serve  --config webpack.dev.js"
     },
     "repository": {
         "type": "git",
