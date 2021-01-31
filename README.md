@@ -2,13 +2,13 @@
 
 ## Getting Started
 
-git clone https://github.com/mMoukhtar/js-capstone.git
-npm install && npm start
-add .env
-port=8000
-geonames_api_key=
-weatherbit_api_key=
-pixabay_api_key=
+####git clone https://github.com/mMoukhtar/js-capstone.git
+####npm install && npm start
+####add .env
+####port=8000
+####geonames_api_key=
+####weatherbit_api_key=
+####pixabay_api_key=
 
 ### Start App in Dev mode
 
