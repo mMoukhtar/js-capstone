@@ -33,7 +33,9 @@ const Trip = state => {
         return `
         <div class="list-body">
             <div class="left flex flex-col flex-ai-c ">
-                <div class="left__trip-image" style="background-Image: url('${trips[currentTrip].image.url}')">
+                <div class="left__trip-image" style="background-Image: url('${
+                    trips[currentTrip].image.url ? trips[currentTrip].image.url : 'https://via.placeholder.com/600'
+                }')">
                 </div>
                 <div class="left__trip-buttons">
                     <button>add lodging info</button>

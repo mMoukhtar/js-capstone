@@ -23,7 +23,7 @@ class Pixabay {
                     };
                 } else {
                     return {
-                        url: undefined,
+                        url: 'https://via.placeholder.com/600',
                         width: undefined,
                         height: undefined,
                     };
