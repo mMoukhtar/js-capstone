@@ -1,23 +1,19 @@
-import path from 'path';
-import webpack from 'webpack';
-import HtmlWebPackPlugin from 'html-webpack-plugin';
-import { CleanWebpackPlugin } from 'clean-webpack-plugin';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
-import TerserPlugin from 'terser-webpack-plugin';
-import WorkboxPlugin from 'workbox-webpack-plugin';
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebPackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
-// Get access to dirname
-const moduleURL = new URL(import.meta.url);
-const dirname = path.dirname(moduleURL.pathname);
-
-export default {
+module.exports = {
     entry: './src/client/index.js',
     output: {
         libraryTarget: 'var',
         library: 'Client',
         filename: 'main.js',
-        path: path.resolve(dirname, 'dist'),
+        path: path.resolve(__dirname, 'dist'),
     },
     // Production settings
     mode: 'production',

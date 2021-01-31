@@ -1,19 +1,15 @@
-import path from 'path';
-import express from 'express';
-import GeoNames from '../Api/geonames.js';
-import Weatherbit from '../Api/weatherbit.js';
-import Pixabay from '../Api/pixabay.js';
-
-// Get access to dirname
-const moduleURL = new URL(import.meta.url);
-const dirname = path.dirname(moduleURL.pathname);
+const path = require('path');
+const express = require('express');
+const GeoNames = require('../Api/geonames.js');
+const Weatherbit = require('../Api/weatherbit.js');
+const Pixabay = require('../Api/pixabay.js');
 
 // Routers
 const router = express.Router();
 
 // Default Endpoint
 router.get('/', (req, res) => {
-    res.sendFile(path.join(dirname, '../../../dist/index.html'));
+    res.sendFile(path.join(__dirname, '../../../dist/index.html'));
 });
 
 // Geonames Endpoint
@@ -55,4 +51,4 @@ router.get('/image', async (req, res) => {
     }
 });
 
-export default router;
+module.exports = router;

@@ -1,5 +1,5 @@
-import { response } from 'express';
-import fetch from 'node-fetch';
+const { response } = require('express');
+const fetch = require('node-fetch');
 
 class Pixabay {
     constructor(apiKey) {
@@ -39,4 +39,4 @@ class Pixabay {
     }
 }
 
-export default Pixabay;
+module.exports = Pixabay;

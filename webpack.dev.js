@@ -1,17 +1,13 @@
-import webpack from 'webpack';
-import path from 'path';
-import HtmlWebPackPlugin from 'html-webpack-plugin';
-import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+const webpack = require('webpack');
+const path = require('path');
+const HtmlWebPackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-// Get access to dirname
-const moduleURL = new URL(import.meta.url);
-const dirname = path.dirname(moduleURL.pathname);
-
-export default {
+module.exports = {
     entry: ['./src/client/index.js'],
     output: {
         filename: 'main.js',
-        path: path.resolve(dirname, 'dist'),
+        path: path.resolve(__dirname, 'dist'),
         publicPath: '/',
         library: 'Client',
         libraryTarget: 'var',
@@ -20,7 +16,7 @@ export default {
     mode: 'development',
     devtool: 'inline-source-map',
     devServer: {
-        contentBase: path.join(dirname, 'dist'),
+        contentBase: path.join(__dirname, 'dist'),
         compress: true,
         port: 9000,
         open: 'Google Chrome',
