@@ -1,5 +1,5 @@
-import { response } from 'express';
-import fetch from 'node-fetch';
+const { response } = require('express');
+const fetch = require('node-fetch');
 
 class GeoNames {
     constructor(apiKey) {
@@ -31,4 +31,4 @@ class GeoNames {
     }
 }
 
-export default GeoNames;
+module.exports = GeoNames;
