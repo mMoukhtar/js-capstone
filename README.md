@@ -1,4 +1,4 @@
-# Welcome to CAPSTONE you ultimate travel planner app
+# Welcome to CAPSTONE your ultimate travel planner app
 
 ## Getting Started
 
