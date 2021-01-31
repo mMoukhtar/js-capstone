@@ -5,7 +5,7 @@
     "main": "index.js",
     "type": "module",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
+        "test": "jest",
         "start": "node src/server/server.js ",
         "build": "node src/webpack/build.prod.js",
         "build:dev": "node src/webpack/build.dev.js",

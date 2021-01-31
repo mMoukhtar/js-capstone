@@ -1,8 +1,8 @@
-import { getDaysDiffFromCurrentDate } from './Util/dateHelper.js';
+import * as dateUtil from './Util/dateHelper.js';
 
 const Api = async (cityName, countryCode, countryName, departureDate) => {
     try {
-        const days = getDaysDiffFromCurrentDate(new Date(departureDate));
+        const days = dateUtil.getDaysDiffFromCurrentDate(new Date(departureDate));
         if (isNaN(days)) throw new Error('Invalid Departure Date');
         const coordinates = await loadGeo(cityName, countryCode);
         if (!coordinates.lat && !coordinates.lng) throw new Error('Invalid Location Entered!');

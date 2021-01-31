@@ -1,11 +1,12 @@
 .header {
     nav {
+        background: $mediumBlue;
         position: relative;
         padding: 0 calc(3vw);
     }
 
     &__title {
-        color: purple;
+        color: $lightOrange;
     }
 
     &.open {
@@ -39,14 +40,14 @@
 
     &__links {
         a {
-            color: $darkGrey;
-            transition: color 100ms ease-in-out;
+            color: $lightOrange;
+            transition: color 200ms ease-in-out;
             &:not(:last-child) {
                 margin-right: 0.2rem;
             }
             &:hover {
-                color: green;
-                border-bottom: 2px solid green;
+                color: #ffffff;
+                border-bottom: 2px solid #ffffff;
             }
         }
     }

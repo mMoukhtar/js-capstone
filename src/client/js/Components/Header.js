@@ -9,7 +9,7 @@ const Header = () => {
 
 const Nav = () => {
     return `
-        <nav class="flex flex-ai-c flex-jc-sb blue">
+        <nav class="flex flex-ai-c flex-jc-sb">
             <h1 class="header__title">Travel Planner</h1>
             <a id= "toggleButton" class="header__toggle hide-for-desktop" href="#">
                 <span></span>

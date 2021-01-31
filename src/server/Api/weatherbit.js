@@ -2,6 +2,7 @@ import fetch from 'node-fetch';
 
 const weatherbitEndpoints = {
     current: 'current?',
+    daily: 'forecast/daily?',
     forecast: 'forecast/daily?',
 };
 
@@ -16,7 +17,7 @@ class Weatherbit {
 
     get endPoints() {
         if (this.days < 1) {
-            return weatherbitEndpoints.current;
+            return weatherbitEndpoints.daily;
         } else {
             return `${weatherbitEndpoints.forecast}days=${this.days <= 16 ? this.days : 16}&`;
         }
@@ -30,19 +31,15 @@ class Weatherbit {
                 if (data && data.length > 0) {
                     const { max_temp: maxTemp, min_temp: minTemp, weather: { description } = {} } = data[0];
                     return {
-                        weather: {
-                            description,
-                            maxTemp,
-                            minTemp,
-                        },
+                        description,
+                        maxTemp,
+                        minTemp,
                     };
                 } else {
                     return {
-                        weather: {
-                            description: undefined,
-                            maxTemp: undefined,
-                            minTemp: undefined,
-                        },
+                        description: undefined,
+                        maxTemp: undefined,
+                        minTemp: undefined,
                     };
                 }
             })

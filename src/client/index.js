@@ -10,11 +10,8 @@ document.addEventListener('click', event => {
     App.hookEvents(event);
 });
 
-const root = document.getElementById('root');
-
 const onPageLoad = () => {
-    App.render(root);
-    $('#datepicker').datepicker();
+    App.render();
 };
 
 export { App };

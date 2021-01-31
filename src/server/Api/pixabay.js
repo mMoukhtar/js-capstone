@@ -17,19 +17,15 @@ class Pixabay {
                 if (total > 0 && totalHits > 0 && hits.length > 0) {
                     const { webformatURL: url, webformatWidth: width, webformatHeight: height } = hits[0];
                     return {
-                        image: {
-                            url,
-                            width,
-                            height,
-                        },
+                        url,
+                        width,
+                        height,
                     };
                 } else {
                     return {
-                        image: {
-                            url: undefined,
-                            width: undefined,
-                            height: undefined,
-                        },
+                        url: undefined,
+                        width: undefined,
+                        height: undefined,
                     };
                 }
             })
