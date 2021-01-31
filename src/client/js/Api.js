@@ -1,4 +1,10 @@
 import * as dateUtil from './Util/dateHelper.js';
+//Question:
+// I had to add the below ref in order to be able to use this module with jest
+// I understand the fetch api isn't implemented in node by default
+// But I don't understand why jest needs fetch to pass the test
+// also now since I added node-fetch does this mean I overrided the original fetch api that is valid for client side?
+import fetch from 'node-fetch';
 
 const Api = async (cityName, countryCode, countryName, departureDate) => {
     try {

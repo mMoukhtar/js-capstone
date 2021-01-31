@@ -13,20 +13,18 @@ describe('Testing the Api logic', () => {
         // Arrange
         const currentDate = DateUtil.getCurrentDateAsString();
         // ACT
-        const { coordinates, countryName, countryCode, cityName, departureDate, days, weather, image } = Api(
-            'London',
-            'GB',
-            'England',
-            currentDate
+        return Api('London', 'GB', 'England', currentDate).then(
+            ({ coordinates, countryName, countryCode, cityName, departureDate, days, weather, image }) => {
+                // ASSERT
+                expect(coordinates).not.toEqual(null);
+                expect(countryName).not.toEqual(null);
+                expect(countryCode).not.toEqual(null);
+                expect(cityName).not.toEqual(null);
+                expect(departureDate).not.toEqual(null);
+                expect(days).not.toEqual(null);
+                expect(weather).not.toEqual(null);
+                expect(image).not.toEqual(null);
+            }
         );
-        // ASSERT
-        expect(coordinates).not.toEqual(null);
-        expect(countryName).not.toEqual(null);
-        expect(countryCode).not.toEqual(null);
-        expect(cityName).not.toEqual(null);
-        expect(departureDate).not.toEqual(null);
-        expect(days).not.toEqual(null);
-        expect(weather).not.toEqual(null);
-        expect(image).not.toEqual(null);
     });
 });
