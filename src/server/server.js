@@ -14,7 +14,7 @@ dotenv.config();
 const app = express();
 
 //Get access to .env
-const port = process.env.port;
+const port = process.env.PORT || 8080;
 
 // Middleware dep.
 app.use(compression());
@@ -25,13 +25,13 @@ app.use(cors());
 // Routers
 app.use('/', router);
 app.use((req, res, next) => {
-    const error = new Error('Page not found!');
-    error.status = 404;
-    next(error);
+  const error = new Error('Page not found!');
+  error.status = 404;
+  next(error);
 });
 
 // Spin Server
 app.listen(port, () => {
-    console.log(chalk.green('Express Server is running...'));
-    console.log(chalk.green(`Server is running on: http://localhost:${port}`));
+  console.log(chalk.green('Express Server is running...'));
+  console.log(chalk.green(`Server is running on: http://localhost:${port}`));
 });
